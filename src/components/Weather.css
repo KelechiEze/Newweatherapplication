@@ -1,0 +1,119 @@
+.weather {
+    place-self: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-bar input {
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 25px;
+    color: #626262;
+    background: #ebfffc;
+    font-size: 18px;
+}
+
+.search-bar img{
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
+}
+
+.weather-icon {
+    width: 150px;
+    margin: 30px 0;
+}
+
+.temperature {
+    color: #fff;
+    font-size: 80px;
+    line-height: 1;
+}
+
+.location {
+    color: #fff;
+    font-size: 40px;
+}
+.weather-data{
+    width: 100%;
+    margin-top: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.weather-data .col{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 22px;
+}
+
+.email-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .email-button:hover {
+    background-color: #45a049;
+  }
+  .email-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .email-input {
+    padding: 10px;
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    width: 250px; /* Fixed width for the input */
+    transition: border-color 0.3s;
+    font-size: 16px; /* Slightly larger font for better readability */
+  }
+  
+  .email-input:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+  }
+  
+  .send-button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px; /* Slightly larger font */
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .send-button:active {
+    background-color: #004494; /* Even darker on click */
+  }
+  
