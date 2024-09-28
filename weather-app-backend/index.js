@@ -109,7 +109,7 @@ const generateEmailHTML = (data) => {
         <h2>Current Temperature: ${data.temperature}°C</h2>
         <p>Humidity: ${data.humidity}%</p>
         <p>Wind Speed: ${data.windSpeed} Km/h</p>
-        <a href="https://yourwebsite.com" class="button">Visit Our Website</a>
+        <a href="https://kelechieze.github.io/Newportfolio/" class="button">Visit Our Website</a>
         <div class="footer">
           <p>Thank you for using <strong>Kelechi Eze's Weather Service</strong>!</p>
           <p>Stay safe and have a great day!</p>
