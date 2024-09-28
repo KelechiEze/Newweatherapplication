@@ -33,10 +33,19 @@ const Weather = () => {
   };
 
   const search = async (city) => {
+    if(city === ""){
+      alert("Enter City Name");
+      return;
+    }
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
       const response = await fetch(url);
       const data = await response.json();
+
+      if (data.cod !== 200) {
+        alert(`Error: ${data.message}`);
+        return;
+      }
 
       const icon = allIcons[data.weather[0].icon] || clear_icon;
 
@@ -45,7 +54,7 @@ const Weather = () => {
         windSpeed: data.wind.speed,
         temperature: Math.floor(data.main.temp),
         location: data.name,
-        icon: icon,
+        icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`, // Use actual URL for image
       });
     } catch (error) {
       console.error('Error fetching weather data:', error);
@@ -68,7 +77,7 @@ const Weather = () => {
       alert('Please enter a valid email and search for a city.');
       return;
     }
-  
+
     try {
       const response = await fetch('http://localhost:5000/send-email', {
         method: 'POST',
@@ -81,12 +90,14 @@ const Weather = () => {
           temperature: weatherData.temperature,
           humidity: weatherData.humidity,
           windSpeed: weatherData.windSpeed,
+          icon: weatherData.icon, // Ensure 'icon' is being sent
         }),
       });
-  
+
       if (response.ok) {
         const result = await response.json();
-        alert(result.message); // This will show "Email sent successfully!"
+        setSuccessMessage(result.message); // Set success message from server response
+        alert(result.message); // Optional alert for success
       } else {
         const errorResult = await response.json();
         alert(errorResult.message || 'Failed to send email.');
@@ -96,7 +107,7 @@ const Weather = () => {
       alert('Failed to send email.');
     }
   };
-  
+
   return (
     <div className="weather">
       <div className="search-bar">
